@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 2 - Java 5</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            width: 420px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .section-title {
+            margin: 25px 0 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            flex: 1 1 40%;
+            min-width: 120px;
+            padding: 12px 18px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            color: #fff;
+            background: #4e73df;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #2e59d9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lab 2 - Java 5</h1>
+
+        <div class="section-title">Bài 1</div>
+        <div class="btn-group">
+            <a class="btn" th:href="@{/ok}">Đi tới Bài 1</a>
+        </div>
+
+        <div class="section-title">Bài 2</div>
+        <div class="btn-group">
+            <a class="btn" th:href="@{/param/form}">Đi tới Bài 2</a>
+        </div>
+
+        <div class="section-title">Bài 3</div>
+        <div class="btn-group">
+            <a class="btn" th:href="@{/product/form}">Đi tới Bài 3</a>
+        </div>
+
+        <div class="section-title">Bài 4</div>
+        <div class="btn-group">
+            <a class="btn" th:href="@{/product/form2}">Đi tới Bài 4</a>
+        </div>
+
+        <div class="section-title">Bài 5</div>
+        <div class="btn-group">
+            <a class="btn" th:href="@{/a}">Trang A</a>
+            <a class="btn" th:href="@{/b}">Trang B</a>
+            <a class="btn" th:href="@{/c}">Trang C</a>
+            <a class="btn" th:href="@{/d}">Trang D</a>
+        </div>
+    </div>
+</body>
+</html>

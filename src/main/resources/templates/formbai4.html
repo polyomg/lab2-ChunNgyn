@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 2 - Bài 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f9f9f9;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+            width: 300px;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 6px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 10px 15px;
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        li {
+            padding: 4px 0;
+            border-bottom: 1px solid #eee;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .section-title {
+            margin-top: 30px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product Form</h2>
+    <form action="/product/save2" method="post">
+        <input name="name" placeholder="Name">
+        <input name="price" placeholder="Price">
+        <button>Save</button>
+    </form>
+
+    <div class="section-title">📌 Sản phẩm khởi tạo</div>
+    <ul>
+        <li>Name: <span th:text="${p1.name}"></span></li>
+        <li>Price: <span th:text="${p1.price}"></span></li>
+    </ul>
+
+    <div class="section-title">📌 Sản phẩm sau khi Save</div>
+    <ul>
+        <th:block th:if="${p2 != null}">
+            <li>Name: <span th:text="${p2.name}"></span></li>
+            <li>Price: <span th:text="${p2.price}"></span></li>
+        </th:block>
+
+        <th:block th:unless="${p2 != null}">
+            <li>Name: ?</li>
+            <li>Price: ?</li>
+        </th:block>
+    </ul>
+
+    <div class="section-title">📌 Danh sách Items</div>
+    <ul>
+        <th:block th:each="item: ${items}">
+            <li>Name: <span th:text="${item.name}"></span></li>
+            <li>Price: <span th:text="${item.price}"></span></li>
+        </th:block>
+    </ul>
+</body>
+</html>

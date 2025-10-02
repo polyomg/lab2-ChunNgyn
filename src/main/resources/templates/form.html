@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 2 - Bài 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        ul {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            list-style: none;
+        }
+        li {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #222;
+        }
+        span {
+            font-weight: bold;
+            color: #0077b6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Param Save Demo</h1>
+    <form action="/param/save/2021" method="post">
+        <input name="y" value="2031">
+        <button>Save</button>
+    </form>
+    <ul>
+        <li>x: <span th:text="${x}"></span></li>
+        <li>y: <span th:text="${y}"></span></li>
+    </ul>
+</body>
+</html>
